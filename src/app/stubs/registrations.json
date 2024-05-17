@@ -1,0 +1,20 @@
+[
+    {
+        "id": 0,
+        "name": "DLCA-S",
+        "description": "De DLCA-S is één van de drie subregistraties vanuit de DLCA. Deze audit registreert de resultaten van patiënten die een chirurgische thoracale (thoraxwand, pleurale, long en mediastinale) ingreep ondergaan.",
+        "url": "https://support.mrdm.com/nl/dica/dlca-s/"
+    },
+    {
+        "id": 1,
+        "name": "DLCA-L",
+        "description": "De DLCA-L is één van de drie subregistraties vanuit de DLCA. Deze audit registreert de resultaten van patiënten met een primaire longmaligniteit, ongeacht het stadium van de ziekte die gezien worden door een longarts. De DLCA-L is in 2016 opgezet door de Nederlandse Vereniging van Longartsen (NVALT).",
+        "url": "https://support.mrdm.com/nl/dica/dlca-l/" 
+    },
+    {
+        "id": 2,
+        "name": "DLCA-R",
+        "description": "De DLCA-R is één van de drie subregistraties vanuit de DLCA. Deze audit registreert de resultaten van patiënten met (niet-)kleincellig longcarcinoom, stadium I-IIIc en/of een locoregionaal recidief die radiotherapie ontvangen.",
+        "url": "https://support.mrdm.com/nl/dica/dlca-r/"
+    }
+]

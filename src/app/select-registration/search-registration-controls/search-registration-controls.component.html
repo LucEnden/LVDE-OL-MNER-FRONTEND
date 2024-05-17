@@ -1,0 +1,16 @@
+<div>
+    <!-- Search controls -->
+    <label for="search-registration-name">Naam:</label>
+    <input id="search-registration-name" type="text" (input)="onSearchTextInput($event)" />
+</div>
+<div>
+    <!-- Selection controls -->
+    <button *ngFor="let registrationName of supportedRegistrationNames"
+        (click)="onRegistrationSelect(registrationName)"
+        [hidden]="registrationSearchText !== '' && !registrationName.startsWith(registrationSearchText)">
+        {{registrationName}}
+    </button>
+</div>
+<div>
+    <button (click)="onConfirmRegistrationSelection()">Bevestig Selectie</button>
+</div>
