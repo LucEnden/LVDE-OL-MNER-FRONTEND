@@ -1,1 +1,10 @@
-<p>registration-info-container works!</p>
+<div>
+    <h3>Over de registratie:</h3>
+    <div *ngIf="registration !== null else registrationSkeleton">
+        <p><a [href]="registration.url">{{registration.name}}</a></p>
+        <p>{{registration.description}}</p>
+    </div>
+    <ng-template #registrationSkeleton>
+        <p>Geen registratie geselecteerd</p>
+    </ng-template>
+</div>

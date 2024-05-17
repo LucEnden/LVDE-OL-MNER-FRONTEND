@@ -3,16 +3,7 @@
 </div>
 <div>
     <!-- Selected Regsitration Information -->
-    <div>
-        <h3>Over de registratie:</h3>
-        <div *ngIf="registration !== null else registrationSkeleton">
-            <p><a [href]="registration.url">{{registration.name}}</a></p>
-            <p>{{registration.description}}</p>
-        </div>
-        <ng-template #registrationSkeleton>
-            <p>Geen registratie geselecteerd</p>
-        </ng-template>
-    </div>
+    <app-registration-info-container [registration]="registration"></app-registration-info-container>
 </div>
 <div>
     <app-start-registration-form [registration]="registration"></app-start-registration-form>
