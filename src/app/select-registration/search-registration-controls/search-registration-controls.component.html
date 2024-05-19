@@ -1,16 +1,15 @@
-<div>
+<div class="flex flex-col gap-2">
     <!-- Search controls -->
-    <label for="search-registration-name">Naam:</label>
-    <input id="search-registration-name" type="text" (input)="onSearchTextInput($event)" />
-</div>
-<div>
+    <div class="labeled-input-primary">
+        <label for="search-registration-name">Naam:</label>
+        <input id="search-registration-name" type="text" placeholder="..." (input)="onSearchTextInput($event)" />
+    </div>
     <!-- Selection controls -->
-    <button *ngFor="let registrationName of supportedRegistrationNames"
-        (click)="onRegistrationSelect(registrationName)"
-        [hidden]="registrationSearchText !== '' && !registrationName.startsWith(registrationSearchText)">
-        {{registrationName}}
-    </button>
-</div>
-<div>
-    <button (click)="onConfirmRegistrationSelection()">Bevestig Selectie</button>
+    <div class="border-2 border-black p-2 rounded-lg flex flex-col gap-2">
+        <button *ngFor="let registrationName of supportedRegistrationNames" (click)="onRegistrationSelect(registrationName)"
+            [hidden]="registrationSearchText !== '' && !registrationName.startsWith(registrationSearchText)" class="btn-secondary">
+            {{registrationName}}
+        </button>
+    </div>
+    <button (click)="onConfirmRegistrationSelection()" class="btn-primary">Bevestig Selectie</button>
 </div>

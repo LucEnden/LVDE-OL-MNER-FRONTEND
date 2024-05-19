@@ -1,10 +1,18 @@
-<div>
-    <h3>Over de registratie:</h3>
-    <div *ngIf="registration !== null else registrationSkeleton">
-        <p><a [href]="registration.url">{{registration.name}}</a></p>
-        <p>{{registration.description}}</p>
-    </div>
-    <ng-template #registrationSkeleton>
-        <p>Geen registratie geselecteerd</p>
-    </ng-template>
+<div class="border-2 border-black rounded-lg p-2 clr-tertiary">
+    <table class="table">
+        <tr>
+            <th>Naam</th>
+            <th>Omschrijving</th>
+        </tr>
+        <tr *ngIf="registration !== null else registrationSkeleton">
+            <td class="text-nowrap text-lg"><a class="link" [href]="registration.url" target="_blank">{{registration.name}}</a></td>
+            <td>{{registration.description}}</td>
+        </tr>
+        <ng-template #registrationSkeleton>
+            <tr #registrationSkeleton>
+                <td class="text-nowrap text-lg">...</td>
+                <td class="w-full">Geen registratie geselecteerd</td>
+            </tr>
+        </ng-template>
+    </table>
 </div>

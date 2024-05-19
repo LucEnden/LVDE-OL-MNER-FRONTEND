@@ -1,10 +1,5 @@
-<div>
-    <app-search-registration-controls (registrationSelected)="registration = $event" />
-</div>
-<div>
-    <!-- Selected Regsitration Information -->
-    <app-registration-info-container [registration]="registration"></app-registration-info-container>
-</div>
-<div>
-    <app-start-registration-form [registration]="registration"></app-start-registration-form>
+<div class="flex flex-row gap-2">
+    <app-search-registration-controls class="basis-3/12" (registrationSelected)="registration = $event" />
+    <app-registration-info-container class="basis-6/12" [registration]="registration" />
+    <app-start-registration-form class="basis-3/12" [registration]="registration" />
 </div>

@@ -9,6 +9,7 @@ import { RegistrationService } from 'src/app/services/registration.service';
 })
 export class SearchRegistrationControlsComponent {
     private _registrationSearchText = '';
+    private _selectedRegistration: Registration | null = null;
     @Output() registrationSearchTextChange = new EventEmitter<string>();
     @Output() registrationSelected = new EventEmitter<Registration>();
 
@@ -27,6 +28,10 @@ export class SearchRegistrationControlsComponent {
         this._registrationSearchText = value;
     }
 
+    get selectedRegistrationName(): string {
+        return this._selectedRegistration ? this._selectedRegistration.name : '';
+    }
+
     onSearchTextInput(e: Event): void {
         const target = e.target as HTMLInputElement;
         const value = target.value;
@@ -39,10 +44,10 @@ export class SearchRegistrationControlsComponent {
 
     onRegistrationSelect(registrationName: string): void {
         console.log('Registration selected:', registrationName);
+        
+        this._selectedRegistration = this.registrationService.getSupportedRegistrations().find(reg => reg.name === registrationName)!;
 
-        const registration = this.registrationService.getSupportedRegistrations().find(reg => reg.name === registrationName)!;
-
-        this.registrationSelected.emit(registration);
+        this.registrationSelected.emit(this._selectedRegistration);
     }
 
     onConfirmRegistrationSelection(): void {
