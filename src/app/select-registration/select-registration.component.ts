@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Registration } from '../models/registration';
+import { RegistrationService } from '../services/registration.service';
 
 @Component({
     selector: 'app-select-registration',
@@ -7,15 +8,11 @@ import { Registration } from '../models/registration';
     styleUrls: ['./select-registration.component.scss']
 })
 export class SelectRegistrationComponent {
-    private _registration: Registration | null = null;
-
-    constructor() { }
+    constructor(
+        public registrationService: RegistrationService
+    ) { }
 
     get registration(): Registration | null {
-        return this._registration
-    }
-
-    set registration(registration: Registration | null) {
-        this._registration = registration;
+        return this.registrationService.selectedRegistration
     }
 }

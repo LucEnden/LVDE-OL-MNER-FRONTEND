@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { StartRegistration } from '../models/start-registration';
 import { RegistrationService } from '../services/registration.service';
 import { Registration } from '../models/registration';
@@ -8,8 +8,8 @@ import { Registration } from '../models/registration';
   templateUrl: './start-registration-form.component.html',
   styleUrls: ['./start-registration-form.component.scss']
 })
-export class StartRegistrationFormComponent {
-    private model: StartRegistration;
+export class StartRegistrationFormComponent implements OnInit {
+    private model: StartRegistration = new StartRegistration(null);
 
     @Input() set registration(registration: Registration | null) {
         if (registration !== null) {
@@ -19,11 +19,15 @@ export class StartRegistrationFormComponent {
 
     constructor(
         private registrationService: RegistrationService
-    ) { 
-        this.model = new StartRegistration(this.registrationService.getSupportedRegistrations()[0]);
+    ) {}
+
+    ngOnInit() {
+        this.registrationService.registrationSelected.subscribe(registration => {
+            this.model.registration = registration;
+        });
     }
 
-    get registration(): Registration {
+    get registration(): Registration | null {
         return this.model.registration;
     }
 }

@@ -19,7 +19,7 @@
     }
 
     .btn {
-        @apply cursor-pointer border-2 px-2 py-1 border-black rounded-lg;
+        @apply cursor-pointer border-2 px-2 py-1 border-black rounded-lg disabled:cursor-not-allowed disabled:bg-slate-400 disabled:hover:bg-slate-500 disabled:text-black;
     }
 
     .btn-primary {

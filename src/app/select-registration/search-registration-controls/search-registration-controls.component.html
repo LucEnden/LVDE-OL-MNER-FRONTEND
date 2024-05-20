@@ -11,5 +11,5 @@
             {{registrationName}}
         </button>
     </div>
-    <button (click)="onConfirmRegistrationSelection()" class="btn-primary">Bevestig Selectie</button>
+    <button (click)="onConfirmRegistrationSelection()" [disabled]="this.registrationService.selectedRegistration === null" class="btn-primary">Bevestig Selectie</button>
 </div>

@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Registration } from 'src/app/models/registration';
+import { Component } from '@angular/core';
 import { RegistrationService } from 'src/app/services/registration.service';
 
 @Component({
@@ -9,12 +8,9 @@ import { RegistrationService } from 'src/app/services/registration.service';
 })
 export class SearchRegistrationControlsComponent {
     private _registrationSearchText = '';
-    private _selectedRegistration: Registration | null = null;
-    @Output() registrationSearchTextChange = new EventEmitter<string>();
-    @Output() registrationSelected = new EventEmitter<Registration>();
 
     constructor(
-        private registrationService: RegistrationService
+        public registrationService: RegistrationService
     ) { }
 
     get supportedRegistrationNames(): string[] {
@@ -29,7 +25,7 @@ export class SearchRegistrationControlsComponent {
     }
 
     get selectedRegistrationName(): string {
-        return this._selectedRegistration ? this._selectedRegistration.name : '';
+        return this.registrationService.selectedRegistration ? this.registrationService.selectedRegistration.name : '';
     }
 
     onSearchTextInput(e: Event): void {
@@ -39,15 +35,12 @@ export class SearchRegistrationControlsComponent {
         console.log('Registration search text changed:', value);
         
         this.registrationSearchText = value;
-        this.registrationSearchTextChange.emit(this.registrationSearchText);
     }
 
     onRegistrationSelect(registrationName: string): void {
         console.log('Registration selected:', registrationName);
         
-        this._selectedRegistration = this.registrationService.getSupportedRegistrations().find(reg => reg.name === registrationName)!;
-
-        this.registrationSelected.emit(this._selectedRegistration);
+        this.registrationService.selectedRegistration = this.registrationService.getSupportedRegistrations().find(reg => reg.name === registrationName)!;
     }
 
     onConfirmRegistrationSelection(): void {

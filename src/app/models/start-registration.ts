@@ -1,8 +1,7 @@
 import { Registration } from "./registration";
 
 export class StartRegistration {
-
     constructor(
-        public registration: Registration
+        public registration: Registration | null
     ) { }
 }
