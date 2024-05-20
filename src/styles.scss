@@ -1,1 +1,84 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .clr-primary {
+        @apply bg-blue-400 text-black;
+    }
+
+    .clr-secondary {
+        @apply bg-blue-200 text-black;
+    }
+
+    .clr-tertiary {
+        @apply bg-[#173753] text-white;
+    }
+
+    .btn {
+        @apply cursor-pointer border-2 px-2 py-1 border-black rounded-lg disabled:cursor-not-allowed disabled:bg-slate-400 disabled:hover:bg-slate-500 disabled:text-black;
+    }
+
+    .btn-primary {
+        @apply btn clr-primary hover:bg-blue-500;
+    }
+
+    .btn-secondary {
+        @apply btn clr-secondary hover:clr-primary;
+    }
+
+    .labeled-input {
+        @apply cursor-pointer border-2 px-2 py-1 border-black rounded-lg;
+
+        label {
+            @apply px-1;
+        }
+
+        input {
+            @apply bg-inherit;
+
+            [placeholder] {
+                @apply text-black;
+            }
+
+            border: none;
+        }
+    }
+
+    .labeled-input-primary {
+        @apply labeled-input clr-primary;
+    }
+
+    .labeled-input-secondary {
+        @apply labeled-input clr-secondary;
+    }
+
+    .labeled-input-tertiary {
+        @apply labeled-input clr-tertiary;
+    }
+
+    .link {
+        @apply underline hover:text-sky-300;
+    }
+
+    .table {
+        @apply table-fixed clr-tertiary;
+
+        tr:first-child {
+            @apply border-b-2 border-white;
+
+            th {
+                @apply p-2 text-xl text-left;
+            }
+        }
+
+        tr {
+            td {
+                @apply p-2 text-left;
+            }
+        }
+    }
+}
