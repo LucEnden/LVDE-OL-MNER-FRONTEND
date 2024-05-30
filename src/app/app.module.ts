@@ -10,6 +10,8 @@ import { RegistrationInfoContainerComponent } from './select-registration/regist
 import { StartRegistrationFormComponent } from './start-registration-form/start-registration-form.component';
 import { StepContainerComponent } from './step-container/step-container.component';
 import { SelectPatientComponent } from './select-patient/select-patient.component';
+import { SearchPatientControlsComponent } from './select-patient/search-patient-controls/search-patient-controls.component';
+import { PatientInfoContainerComponent } from './select-patient/patient-info-container/patient-info-container.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { SelectPatientComponent } from './select-patient/select-patient.componen
     RegistrationInfoContainerComponent,
     StartRegistrationFormComponent,
     StepContainerComponent,
-    SelectPatientComponent
+    SelectPatientComponent,
+    SearchPatientControlsComponent,
+    PatientInfoContainerComponent
   ],
   imports: [
     BrowserModule,
