@@ -1,1 +1,24 @@
-<p>search-patient-controls works!</p>
+<div class="flex flex-col gap-2">
+    <div class="clr-primary text-xl font-semibold p-2 rounded-lg border-black border-2">
+        Fliters
+    </div>
+    <div class="flex flex-col gap-2 p-2 rounded-lg border-black border-2">
+        <div class="btn-primary labeled-input">
+            <label for="patient-mdn">MDN:</label>
+            <input id="patient-mdn" type="text" [(ngModel)]="mdn" />
+        </div>
+        <div class="btn-primary labeled-input">
+            <label for="patient-firstname">Voornaam:</label>
+            <input id="patient-firstname" type="text" [(ngModel)]="firstName" />
+        </div>
+        <div class="btn-primary labeled-input">
+            <label for="patient-lastname">Achternaam:</label>
+            <input id="patient-lastname" type="text" [(ngModel)]="lastName" />
+        </div>
+        <div class="btn-primary labeled-input">
+            <label for="patient-dateofbirth">Geboortedatum:</label>
+            <input id="patient-dateofbirth" type="date" [(ngModel)]="dateOfBirth" />
+        </div>
+    </div>
+    <button class="btn-primary text-xl font-semibold p-2 rounded-lg border-black border-2 mb-2 w-full text-left">Selecteer Patient</button>
+</div>
