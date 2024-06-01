@@ -10,20 +10,8 @@ import { PatientService } from '../services/patient.service';
   templateUrl: './start-registration-form.component.html',
   styleUrls: ['./start-registration-form.component.scss']
 })
-export class StartRegistrationFormComponent implements OnInit, AfterViewInit {
+export class StartRegistrationFormComponent implements OnInit {
     private model: StartRegistration = new StartRegistration(null, null);
-
-    @Input() set registration(registration: Registration | null) {
-        if (registration !== null) {
-            this.model.registration = registration;
-        }
-    }
-
-    @Input() set patient(patient: PatientInfo | null) {
-        if (patient !== null) {
-            this.model.patient = patient;
-        }
-    };
 
     constructor(
         private registrationService: RegistrationService,
@@ -34,15 +22,12 @@ export class StartRegistrationFormComponent implements OnInit, AfterViewInit {
         this.registrationService.registrationSelected.subscribe(registration => {
             this.model.registration = registration;
         });
+        this.model.registration = this.registrationService.selectedRegistration;
 
         this.patientService.patientSelected.subscribe(patient => {
             this.model.patient = patient;
         });
-    }
-
-    ngAfterViewInit() {
         this.model.patient = this.patientService.selectedPatient;
-        this.model.registration = this.registrationService.selectedRegistration;
     }
 
     get registration(): Registration | null {
