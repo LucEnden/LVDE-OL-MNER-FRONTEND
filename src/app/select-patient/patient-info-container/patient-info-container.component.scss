@@ -1,0 +1,17 @@
+
+.table {
+    table-layout: initial;
+    tr {
+        td:first-child,
+        th:first-child {
+            display: table-cell;
+            @apply text-center w-12;
+        }
+    }
+
+    tr:not(:first-child) {
+        td {
+            @apply border-t-[1px] border-l-[1px];
+        }
+    }
+}

@@ -3,22 +3,36 @@
         Fliters
     </div>
     <div class="flex flex-col gap-2 p-2 rounded-lg border-black border-2">
-        <div class="btn-primary labeled-input">
-            <label for="patient-mdn">MDN:</label>
-            <input id="patient-mdn" type="text" [(ngModel)]="mdn" />
+        <div class="btn-primary labeled-input flex">
+            <label for="patient-mdn" class="self-center">MDN:</label>
+            <input id="patient-mdn" class="grow" type="number" [(ngModel)]="mdn" />
+            <button class="btn-secondary self-end ml-2" (click)="mdn = ''">
+                Verwijder
+            </button>
         </div>
-        <div class="btn-primary labeled-input">
-            <label for="patient-firstname">Voornaam:</label>
-            <input id="patient-firstname" type="text" [(ngModel)]="firstName" />
+        <div class="btn-primary labeled-input flex">
+            <label for="patient-first-name" class="self-center">Voornaam:</label>
+            <input id="patient-first-name" class="grow" type="text" [(ngModel)]="firstName" />
+            <button class="btn-secondary self-end ml-2" (click)="firstName = ''">
+                Verwijder
+            </button>
         </div>
-        <div class="btn-primary labeled-input">
-            <label for="patient-lastname">Achternaam:</label>
-            <input id="patient-lastname" type="text" [(ngModel)]="lastName" />
+        <div class="btn-primary labeled-input flex">
+            <label for="patient-last-name" class="self-center">Achternaam:</label>
+            <input id="patient-last-name" class="grow" type="text" [(ngModel)]="lastName" />
+            <button class="btn-secondary self-end ml-2" (click)="lastName = ''">
+                Verwijder
+            </button>
         </div>
-        <div class="btn-primary labeled-input">
-            <label for="patient-dateofbirth">Geboortedatum:</label>
-            <input id="patient-dateofbirth" type="date" [(ngModel)]="dateOfBirth" />
+        <div class="btn-primary labeled-input flex">
+            <label for="patient-date-of-birth" class="self-center">Geboortedatum:</label>
+            <input id="patient-date-of-birth" class="grow" type="date" [(ngModel)]="dateOfBirth" />
+            <button class="btn-secondary self-end ml-2" (click)="dateOfBirth = ''">
+                Verwijder
+            </button>
         </div>
     </div>
-    <button class="btn-primary text-xl font-semibold p-2 rounded-lg border-black border-2 mb-2 w-full text-left">Selecteer Patient</button>
+    <button
+        class="btn-primary text-xl font-semibold p-2 rounded-lg border-black border-2 mb-2 w-full text-left">Selecteer
+        Patient</button>
 </div>

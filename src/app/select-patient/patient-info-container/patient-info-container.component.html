@@ -1,1 +1,18 @@
-<p>patient-info-container works!</p>
+<table class="table w-full rounded-xl">
+    <tr>
+        <th></th>
+        <th>MDN</th>
+        <th>Voornaam</th>
+        <th>Achternaam</th>
+        <th>Geboorte datum</th>
+    </tr>
+    <tr *ngFor="let patient of patientsInfo">
+        <td class="w-full">
+            <input type="radio" name="patient" (click)="onPatientSelect.emit(patient)">
+        </td>
+        <td>{{patient.mdn}}</td>
+        <td>{{patient.firstName}}</td>
+        <td>{{patient.lastName}}</td>
+        <td>{{patient.dateOfBirth}}</td>
+    </tr>
+</table>
