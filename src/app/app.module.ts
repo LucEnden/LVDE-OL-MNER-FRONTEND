@@ -12,6 +12,7 @@ import { StepContainerComponent } from './step-container/step-container.componen
 import { SelectPatientComponent } from './select-patient/select-patient.component';
 import { SearchPatientControlsComponent } from './select-patient/search-patient-controls/search-patient-controls.component';
 import { PatientInfoContainerComponent } from './select-patient/patient-info-container/patient-info-container.component';
+import { VerifyRegistrationComponent } from './verify-registration/verify-registration.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PatientInfoContainerComponent } from './select-patient/patient-info-con
     StepContainerComponent,
     SelectPatientComponent,
     SearchPatientControlsComponent,
-    PatientInfoContainerComponent
+    PatientInfoContainerComponent,
+    VerifyRegistrationComponent
   ],
   imports: [
     BrowserModule,
