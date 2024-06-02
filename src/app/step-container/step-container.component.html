@@ -2,7 +2,8 @@
     <div class="current-step">
         {{currentStep.index + 1}}. {{currentStep.description}}
     </div>
-    <!-- <div>
-        <button (click)="PreviousStep()" [disabled]="CurrentStep <= 0">Back</button>
-    </div> -->
+    <div class="flex-grow"></div>
+    <div>
+        <button class="btn-primary" (click)="previousStep()" [disabled]="currentStep.index <= 0">Terug</button>
+    </div>
 </div>

@@ -17,8 +17,8 @@ const routes: Routes = [
     },
     // {
     //     path: 'verify-registration',
-    //     component: SelectPatientComponent,
-    //     canActivate: [registrationSelectedGuard]
+    //     component: VerifyRegistrationComponent,
+    //     canActivate: [patientSelectedGuard]
     // },
     {
         path: '',
