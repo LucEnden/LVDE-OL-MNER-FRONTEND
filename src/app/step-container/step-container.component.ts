@@ -18,6 +18,8 @@ export class StepContainerComponent implements OnInit {
         // If the routes are changed, this method will need to be updated.
         this._steps = {
             '/select-registration': { index: 0, description: 'Selecteer een registratie' },
+            '/select-patient': { index: 1, description: 'Selecteer een patiënt' },
+            '/verify-registration': { index: 2, description: 'Verifieer de registratie' },
         };
     }
 

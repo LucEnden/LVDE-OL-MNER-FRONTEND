@@ -15,6 +15,11 @@ const routes: Routes = [
         component: SelectPatientComponent,
         canActivate: [registrationSelectedGuard]
     },
+    // {
+    //     path: 'verify-registration',
+    //     component: SelectPatientComponent,
+    //     canActivate: [registrationSelectedGuard]
+    // },
     {
         path: '',
         redirectTo: '/select-registration',

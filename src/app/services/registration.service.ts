@@ -7,19 +7,30 @@ import * as Registrations from '../stubs/registrations.json';
     providedIn: 'root'
 })
 export class RegistrationService {
-    private _selectedRegistration: Registration | null = null;
+    private _localStorageKey = 'selectedRegistration';
 
     @Output() registrationSelected = new EventEmitter<Registration>();
 
     constructor() { }
 
     get selectedRegistration(): Registration | null {
-        return this._selectedRegistration;
+        const storedRegistration = localStorage.getItem(this._localStorageKey);
+
+        if (storedRegistration !== null) {
+            return JSON.parse(storedRegistration) as Registration;
+        } else {
+            return null;
+        }
     }
     set selectedRegistration(value: Registration | null) {
-        this._selectedRegistration = value;
         if (value !== null) {
+            // Store the selected registration in local storage
+            // IMPORTANT: This is not secure, once the backend is implemented, this should be stored in the user's session
+            localStorage.setItem(this._localStorageKey, JSON.stringify(value));
+
             this.registrationSelected.emit(value);
+        } else {
+            localStorage.removeItem(this._localStorageKey);
         }
     }
 
