@@ -1,16 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PatientService } from '../services/patient.service';
+import { RegistrationService } from '../services/registration.service';
 
 @Component({
-  selector: 'app-step-container',
-  templateUrl: './step-container.component.html',
-  styleUrls: ['./step-container.component.scss']
+    selector: 'app-step-container',
+    templateUrl: './step-container.component.html',
+    styleUrls: ['./step-container.component.scss']
 })
 export class StepContainerComponent implements OnInit {
-    private _steps: { [path: string] : { index: number, description: string }; } = {};
+    private _steps: { [path: string]: { index: number, description: string }; } = {};
 
     constructor(
         private router: Router,
+        private registrationService: RegistrationService,
+        private patientService: PatientService
     ) { }
 
     ngOnInit() {
@@ -29,5 +33,21 @@ export class StepContainerComponent implements OnInit {
 
     get currentStep(): { index: number, description: string } {
         return this._steps[this.router.url];
+    }
+
+    previousStep(): void {
+        switch (this.currentStep.index) {
+            case 0:
+                break;
+            case 1:
+                this.registrationService.selectedRegistration = null;
+                this.patientService.selectedPatient = null;
+                this.router.navigate(['/select-registration']);
+                break;
+            case 2:
+                this.patientService.selectedPatient = null;
+                this.router.navigate(['/select-patient']);
+                break;
+        }
     }
 }
