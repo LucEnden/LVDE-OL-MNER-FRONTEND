@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { RegistrationService } from 'src/app/services/registration.service';
 
 @Component({
@@ -10,6 +11,7 @@ export class SearchRegistrationControlsComponent {
     private _registrationSearchText = '';
 
     constructor(
+        private router: Router,
         public registrationService: RegistrationService
     ) { }
 
@@ -44,6 +46,10 @@ export class SearchRegistrationControlsComponent {
     }
 
     onConfirmRegistrationSelection(): void {
-        console.log('Confirming registration selection');
+        console.log('Confirming registration selection:', this.selectedRegistrationName);
+
+        if (this.registrationService.selectedRegistration !== null) {
+            this.router.navigate(['/select-patient']);
+        }
     }
 }

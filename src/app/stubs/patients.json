@@ -1,0 +1,62 @@
+[
+    {
+        "mdn": 1,
+        "firstName": "John",
+        "lastName": "Doe",
+        "dateOfBirth": "01/01/2000"
+    },
+    {
+        "mdn": 2,
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "dateOfBirth": "02/02/2001"
+    },
+    {
+        "mdn": 3,
+        "firstName": "Alice",
+        "lastName": "Johnson",
+        "dateOfBirth": "03/03/2002"
+    },
+    {
+        "mdn": 4,
+        "firstName": "Bob",
+        "lastName": "Brown",
+        "dateOfBirth": "04/04/2003"
+    },
+    {
+        "mdn": 5,
+        "firstName": "Charlie",
+        "lastName": "Davis",
+        "dateOfBirth": "05/05/2004"
+    },
+    {
+        "mdn": 6,
+        "firstName": "David",
+        "lastName": "Evans",
+        "dateOfBirth": "06/06/2005"
+    },
+    {
+        "mdn": 7,
+        "firstName": "Eve",
+        "lastName": "Garcia",
+        "dateOfBirth": "07/07/2006"
+    },
+    {
+        "mdn": 8,
+        "firstName": "Frank",
+        "lastName": "Hernandez",
+        "dateOfBirth": "08/08/2007"
+    },
+    {
+        "mdn": 9,
+        "firstName": "Grace",
+        "lastName": "Iyer",
+        "dateOfBirth": "09/09/2008"
+    },
+    {
+        "mdn": 10,
+        "firstName": "Hank",
+        "lastName": "Jones",
+        "dateOfBirth": "10/10/2009"
+    }
+]
