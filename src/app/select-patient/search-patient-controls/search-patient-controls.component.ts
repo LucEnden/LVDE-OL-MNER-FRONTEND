@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-search-patient-controls',
@@ -16,7 +17,9 @@ export class SearchPatientControlsComponent {
     @Output() onLastNameChange: EventEmitter<string> = new EventEmitter<string>();
     @Output() onDateOfBirthChange: EventEmitter<string> = new EventEmitter<string>();
 
-    constructor() { }
+    constructor(
+        private router: Router
+    ) { }
 
     get mdn(): string {
         return this._mdn;
@@ -48,5 +51,9 @@ export class SearchPatientControlsComponent {
     set dateOfBirth(value: string) {
         this._dateOfBirth = value;
         this.onDateOfBirthChange.emit(this._dateOfBirth);
+    }
+
+    onConfirmPatient(): void {
+        this.router.navigate(['/verify-registration']);
     }
 }
