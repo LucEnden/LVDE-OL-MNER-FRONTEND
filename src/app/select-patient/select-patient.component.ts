@@ -28,36 +28,40 @@ export class SelectPatientComponent implements AfterViewInit {
     }
 
     get filteredPatientsInfo(): PatientInfo[] {
-        const defaultFil = (patInfo: PatientInfo, filterValue: string) => {
-            if (filterValue == '') {
+        const defaultFil = (patInfoValue: string, filterValue: string) => {
+            if (filterValue == null || filterValue == undefined || filterValue == '') {
                 return true;
             }
 
-            return patInfo.lastName.toLowerCase().includes(filterValue.toLowerCase());
+            return patInfoValue.toLowerCase().includes(filterValue.toLowerCase());
         };
 
 
         return this._patientsInfo.filter((patientInfo: PatientInfo) => {
             return (
-                defaultFil(patientInfo, this._mdnFilter) && 
-                defaultFil(patientInfo, this._firstNameFilter) && 
-                defaultFil(patientInfo, this._lastNameFilter) && 
-                defaultFil(patientInfo, this._dateOfBirthFilter)
+                defaultFil(patientInfo.mdn.toString(), this._mdnFilter) && 
+                defaultFil(patientInfo.firstName, this._firstNameFilter) && 
+                defaultFil(patientInfo.lastName, this._lastNameFilter) && 
+                defaultFil(patientInfo.dateOfBirth, this._dateOfBirthFilter)
             );
         });
     }
 
     set mdnFilter(value: string) {
-        this._mdnFilter = value;
+        console.log('MDN filter changed:', value);
+        if (value) this._mdnFilter = value.toString();
     }
     set firstNameFilter(value: string) {
-        this._firstNameFilter = value;
+        console.log('First name filter changed:', value);
+        if (value) this._firstNameFilter = value.toString();
     }
     set lastNameFilter(value: string) {
-        this._lastNameFilter = value;
+        console.log('Last name filter changed:', value);
+        if (value) this._lastNameFilter = value.toString();
     }
     set dateOfBirthFilter(value: string) {
-        this._dateOfBirthFilter = value
+        console.log('Date of birth filter changed:', value);
+        if (value) this._dateOfBirthFilter = value.toString();
     }
 
     onPatientSelect(patientInfo: PatientInfo): void {
