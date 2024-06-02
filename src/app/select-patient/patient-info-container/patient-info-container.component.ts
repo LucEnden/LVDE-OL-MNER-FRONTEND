@@ -10,13 +10,4 @@ export class PatientInfoContainerComponent {
     @Input({ required: true }) patientsInfo: PatientInfo[] = [];
 
     @Output() onPatientSelect: EventEmitter<PatientInfo> = new EventEmitter<PatientInfo>();
-
-    // get patientsInfo(): PatientInfo[] {
-    //     return this._patientsInfo;
-    // }
-    // @Input({
-    //     required: true
-    // }) set patientsInfo(value: PatientInfo[]) {
-    //     this._patientsInfo = value;
-    // }
 }
