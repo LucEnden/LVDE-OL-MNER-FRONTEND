@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { PatientService } from 'src/app/services/patient.service';
 
 @Component({
     selector: 'app-search-patient-controls',
@@ -18,7 +19,8 @@ export class SearchPatientControlsComponent {
     @Output() onDateOfBirthChange: EventEmitter<string> = new EventEmitter<string>();
 
     constructor(
-        private router: Router
+        private router: Router,
+        public patientService: PatientService
     ) { }
 
     get mdn(): string {
