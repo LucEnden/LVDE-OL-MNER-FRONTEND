@@ -31,9 +31,9 @@ export class SelectPatientComponent implements AfterViewInit {
         const defaultFil = (patInfoValue: string, filterValue: string) => {
             if (filterValue == null || filterValue == undefined || filterValue == '') {
                 return true;
+            } else {
+                return patInfoValue.toLowerCase().includes(filterValue.toLowerCase());
             }
-
-            return patInfoValue.toLowerCase().includes(filterValue.toLowerCase());
         };
 
 
@@ -49,19 +49,27 @@ export class SelectPatientComponent implements AfterViewInit {
 
     set mdnFilter(value: string) {
         console.log('MDN filter changed:', value);
-        if (value) this._mdnFilter = value.toString();
+        this._mdnFilter = this.defaultSet(value);
     }
     set firstNameFilter(value: string) {
         console.log('First name filter changed:', value);
-        if (value) this._firstNameFilter = value.toString();
+        this._firstNameFilter = this.defaultSet(value);
     }
     set lastNameFilter(value: string) {
         console.log('Last name filter changed:', value);
-        if (value) this._lastNameFilter = value.toString();
+        this._lastNameFilter = this.defaultSet(value);
     }
     set dateOfBirthFilter(value: string) {
         console.log('Date of birth filter changed:', value);
-        if (value) this._dateOfBirthFilter = value.toString();
+        this._dateOfBirthFilter = this.defaultSet(value);
+    }
+
+    private defaultSet(val: string) {
+        if (val !== null || val !== undefined) {
+            return val.toString();
+        } else {
+            return '';
+        }
     }
 
     onPatientSelect(patientInfo: PatientInfo): void {
