@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { PatientService } from 'src/app/services/patient.service';
 
 @Component({
     selector: 'app-search-patient-controls',
@@ -18,7 +19,8 @@ export class SearchPatientControlsComponent {
     @Output() onDateOfBirthChange: EventEmitter<string> = new EventEmitter<string>();
 
     constructor(
-        private router: Router
+        private router: Router,
+        public patientService: PatientService
     ) { }
 
     get mdn(): string {
@@ -26,15 +28,23 @@ export class SearchPatientControlsComponent {
     }
     set mdn(value: string) {
         this._mdn = value;
-        this.onMdnChange.emit(this._mdn);
+        if (value === undefined || value === null) {
+            this.onMdnChange.emit('')
+        } else {
+            this.onMdnChange.emit(this._mdn);
+        }
     }
-    
+
     get firstName(): string {
         return this._firstName;
     }
     set firstName(value: string) {
         this._firstName = value;
-        this.onFirstNameChange.emit(this._firstName);
+        if (value === undefined || value === null) {
+            this.onFirstNameChange.emit('')
+        } else {
+            this.onFirstNameChange.emit(this._firstName);
+        }
     }
 
     get lastName(): string {
@@ -42,7 +52,11 @@ export class SearchPatientControlsComponent {
     }
     set lastName(value: string) {
         this._lastName = value;
-        this.onLastNameChange.emit(this._lastName);
+        if (value === undefined || value === null) {
+            this.onLastNameChange.emit('')
+        } else {
+            this.onLastNameChange.emit(this._lastName);
+        }
     }
 
     get dateOfBirth(): string {
@@ -50,7 +64,11 @@ export class SearchPatientControlsComponent {
     }
     set dateOfBirth(value: string) {
         this._dateOfBirth = value;
-        this.onDateOfBirthChange.emit(this._dateOfBirth);
+        if (value === undefined || value === null) {
+            this.onDateOfBirthChange.emit('')
+        } else {
+            this.onDateOfBirthChange.emit(this._dateOfBirth);
+        }
     }
 
     onConfirmPatient(): void {
