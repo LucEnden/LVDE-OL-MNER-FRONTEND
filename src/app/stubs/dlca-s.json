@@ -1,0 +1,397 @@
+[
+    {
+        "section_name": "Comorbiditeiten 1",
+        "section_items": [
+            {
+                "Categorie": "Algemeen",
+                "LabelOmschrijving": "Datum comorbiditeiten\n\nDit betreft de datum waarop de bepaling van deze comorbiditeiten is vastgesteld. Deze datum is vaak gelijk aan 'consult datum' of \u2018operatiedatum\u2019.\n\nN.B. Indien de comorbiditeitstatus van de pati\u00ebnt is gewijzigd sinds uw vorige invoer, maakt u een nieuw record voor deze pati\u00ebnt aan.",
+                "VariabeleNaam": "datcom",
+                "Type": "datum",
+                "Lengte": 10.0,
+                "Formaat": "jjjj-mm-dd",
+                "VariabeleVerplicht": "Ja",
+                "OptieKeuzeVerplicht": "",
+                "HelpTekst": "Een actuele datum is essentieel voor het koppelen van de comorbiditeiten aan een behandeling/episode."
+            },
+            {
+                "Categorie": "Pulmonaal",
+                "LabelOmschrijving": "Chronische longziekte",
+                "VariabeleNaam": "comlong",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Chronische longziekte (ICD-10):\n\nI27.8: Overige gespecificeerde pulmonale hartziekten    \n  I27.9: Pulmonale hartziekte, niet-gespecificeerd    \n  J40.x-J47.x: Chronische aandoeningen van onderste luchtwegen    \n  J60.x-J67.x: Longaandoeningen door uitwendige agentia    \n  J68.4: Chronische respiratoire aandoeningen door chemische stoffen, gassen, rook en dampen    \n  J70.1: Chronische en overige longmanifestaties door (be)straling    \n  J70.3: Chronische door geneesmiddelen ge\u00efnduceerde interstiti\u00eble longaandoeningen"
+            },
+            {
+                "Categorie": "Pulmonaal",
+                "LabelOmschrijving": "COPD/ CARA/ emfyseem/ chron. bronch.",
+                "VariabeleNaam": "compulmobstr",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "COPD/CARA/emfyseem/chron.bronch. (ICD-10):\n\nJ41.x: Eenvoudige en mucopurulente chronische bronchitis    \n  J42: Niet gespecificeerde chronische bronchitis    \n  J43.1: Panlobulair emfyseem    \n  J43.2: Centrilobulair emfyseem    \n  J43.9: Emfyseem, niet gespecificeerd    \n  J44.x: Overige chronische obstructieve longaandoeningen    \n  J45.x: Astma    \n  J98.2: Interstitieel emfyseem    \n  J98.3: Compensatoir emfyseem"
+            },
+            {
+                "Categorie": "Pulmonaal",
+                "LabelOmschrijving": "Longfibrose",
+                "VariabeleNaam": "compulmfibr",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Longfibrose (ICD-10):\n\nJ84.1: Overige interstiti\u00eble longziekten met fibrose"
+            },
+            {
+                "Categorie": "Pulmonaal",
+                "LabelOmschrijving": "Status na longtransplantatie",
+                "VariabeleNaam": "compulmtranspl",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Status na longtransplantatie (ICD-10):\n\nZ94.2: Aanwezigheid van longtransplantaat    \n  Z94.3: Aanwezigheid van hart-longtransplantaat"
+            },
+            {
+                "Categorie": "Cardiaal",
+                "LabelOmschrijving": "Angina pectoris",
+                "VariabeleNaam": "comap",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Angina pectoris (ICD-10):\n\nI20.x: Angina pectoris    \n  I48.0: Paroxysmaal atriumfibrilleren"
+            },
+            {
+                "Categorie": "Cardiaal",
+                "LabelOmschrijving": "Myocardinfarct",
+                "VariabeleNaam": "commyo",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Myocardinfarct (ICD-10):\n\nI21.x: Acuut myocardinfarct    \n  I22.x: Recidief myocardinfarct    \n  I25.2: Vroeger myocardinfarct"
+            },
+            {
+                "Categorie": "Cardiaal",
+                "LabelOmschrijving": "PTCA",
+                "VariabeleNaam": "comptca",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "PTCA (ICD-10):\n\nZ95.5: Aanwezigheid van implantaat en transplantaat voor coronaire vaatplastiek"
+            },
+            {
+                "Categorie": "Cardiaal",
+                "LabelOmschrijving": "CABG",
+                "VariabeleNaam": "comcabg",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "CABG (ICD-10):\n\nZ95.1: Aanwezigheid van transplantaat voor aortocoronaire bypass"
+            },
+            {
+                "Categorie": "Cardiaal",
+                "LabelOmschrijving": "Kleplijden",
+                "VariabeleNaam": "comkleplij",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Kleplijden (ICD-10):\n\nI05.x, I06.8-I06.9, I07.x, I08.x, I09.8: Chronische reumatische hartziekten    \n  I34.x: Niet-reumatische mitralisklepaandoeningen    \n  I35.x: Niet-reumatische aortaklepaandoeningen    \n  I36.x: Niet-reumatische tricuspidalisklepaandoeningen    \n  I37.x: Pulmonalisklepaandoeningen    \n  I38: Endocarditis, klep niet gespecificeerd    \n  I39.0- I39.3: mitralis-, aorta-, tricuspidalis- of pulmonalisklepaandoeningen bij elders geclassificeerde ziekten    \n  Q22.0-Q22.4, Q22.8-Q22.9: Congenitale misvormingen van pulmonalis- en tricuspidaliskleppen    \n  Q23.x: Congenitale misvormingen van aorta- en mitraliskleppen    \n  T82.0: Mechanische complicatie van hartklepprothese    \n  T82.2: Mechanische complicatie van coronaire by-passoperatie en bioprothese van kleppen    \n  T82.6: Infectie en ontstekingsreactie als gevolg van hartklepprothese"
+            },
+            {
+                "Categorie": "Cardiaal",
+                "LabelOmschrijving": "Klepvervanging",
+                "VariabeleNaam": "comklepver",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Klepvervanging (ICD-10):\n\nT82.0: Mechanische complicatie van hartklepprothese    \n  T82.2: Mechanische complicatie van coronaire by-passoperatie en bioprothese van kleppen    \n  T82.6: Infectie en ontstekingsreactie als gevolg van hartklepprothese"
+            },
+            {
+                "Categorie": "Cardiaal",
+                "LabelOmschrijving": "Atriumfibrilleren/-flutter",
+                "VariabeleNaam": "comaf",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Atriumfibrilleren/-flutter (ICD-10):\n\nI48.x: Atriumfibrillatie en -flutter"
+            },
+            {
+                "Categorie": "Cardiaal",
+                "LabelOmschrijving": "Hartritmestoornis (excl. atriumfibrilleren)",
+                "VariabeleNaam": "comcarritme",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Hartritmestoornis (excl. atriumfibrilleren) (ICD-10):\n\nI45.x: Overige geleidingsstoornissen    \n  I47.x: Paroxysmale tachycardie    \n  I49.x: Overige hartritmestoornissen"
+            },
+            {
+                "Categorie": "Cardiaal",
+                "LabelOmschrijving": "Decompensatio cordis",
+                "VariabeleNaam": "comdecompcor",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Decompensatio cordis (ICD-10):\n\nI50.x: Hartdecompensatie"
+            },
+            {
+                "Categorie": "Cardiaal",
+                "LabelOmschrijving": "Congestief hartfalen",
+                "VariabeleNaam": "comhartfaal",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Congestief hartfalen (ICD-10):\n\nI09.9: Reumatische hartziekte    \n  I11.0: Hypertensieve hartziekte met (congestieve) hartdecompensatie    \n  I13.0,I32.2: Hypertensieve hart- \u00e9n nierziekte met (congestieve) hartdecompensatie (\u00e9n nierinsuffici\u00ebntie)    \n  I25.5: Ischemische cardiomyopathie    \n  I42.0, I42.5-I42.9: Cardiomyopathie met of zonder hartdilatatie (niet-obstructief en/of d.m.v. uitwendige-agentia)    \n  I50.x: Hartdecompensatie    \n  P29.0: Neonatale cardiale-insuffici\u00ebntie"
+            },
+            {
+                "Categorie": "Cardiaal",
+                "LabelOmschrijving": "Status na harttransplantatie",
+                "VariabeleNaam": "ccomcartranspl",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Status na harttransplantatie (ICD-10):\n\nZ94.1: Aanwezigheid van harttransplantaat"
+            },
+            {
+                "Categorie": "Vasculair",
+                "LabelOmschrijving": "Perifeer vaatlijden/aneurysma aorta",
+                "VariabeleNaam": "comperif",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Perifeer vaatlijden/aneurysma aorta (ICD-10): \n\nI70.x: Atherosclerose     \nI71.x: Aneurysma en dissectie van aorta     \nI73.1, I173.8-I73.9: Overige perifere vaatziekten    \nI77.1: Strictuur van arterie    \nI79.0, I79.2: Aneurysma van aorta of perifere angiopathie bij elders geclassificeerde ziekten    \nK55.1, K55.8-K55.9: Vaataandoeningen (chronisch) van darm    \nZ95.8-Z95.9: Aanwezigheid van overige gespecificeerde cardiale- en vasculaire-implantaten en transplantaten"
+            },
+            {
+                "Categorie": "Vasculair",
+                "LabelOmschrijving": "Perifeer stenoserend vaatlijden",
+                "VariabeleNaam": "compvsten",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Perifeer stenoserend vaatlijden (ICD-10):\n\nI70.x: Atherosclerose    \n  I73.8: Overige gespecificeerde perifere vaatziekten    \n  I73.9: Perifere vaatziekte, niet gespecificeerd"
+            },
+            {
+                "Categorie": "Vasculair",
+                "LabelOmschrijving": "Aneurysma aorta",
+                "VariabeleNaam": "comaneuraorta",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Aneurysma Aorta (ICD-10):\n\nI71.x: Aneurysma en dissectie van aorta    \n  I79.0: Aneurysma van aorta bij elders geclassificeerde ziekten"
+            },
+            {
+                "Categorie": "Vasculair",
+                "LabelOmschrijving": "Hypertensie",
+                "VariabeleNaam": "comhypert",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Hypertensie (ICD-10):\n\nI10: Essenti\u00eble (primaire) hypertensie    \n  I11.x: Hypertensieve hartziekte    \n  I15.x: Secundaire hypertensie"
+            },
+            {
+                "Categorie": "Vasculair",
+                "LabelOmschrijving": "Carotis stenose",
+                "VariabeleNaam": "comcarotis",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Carotis stenose (ICD-10):\n\nI65.2: Occlusie en stenose van arteria carotis"
+            },
+            {
+                "Categorie": "Stolling",
+                "LabelOmschrijving": "DVT/trombosebeen",
+                "VariabeleNaam": "comtromb",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "DVT/trombosebeen (ICD-10):\n\nI80.0: Flebitis en tromboflebitis van oppervlakkige venen van onderste extremiteiten    \n  I80.2: Diepe veneuze-trombose NNO    \n  I80.3: Flebitis en tromboflebitis van onderste extremiteiten, niet-gespecificeerd    \n  O22.3: Diepe flebotrombose tijdens zwangerschap    \n  O87.1: Diepe flebotrombose tijdens kraambed"
+            },
+            {
+                "Categorie": "Stolling",
+                "LabelOmschrijving": "Longembolie",
+                "VariabeleNaam": "compulmemb",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Longembolie (ICD-10):\n\nI26.x: Longembolie"
+            },
+            {
+                "Categorie": "Stolling",
+                "LabelOmschrijving": "Verminderde stolling",
+                "VariabeleNaam": "comcoag",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Verminderde stolling (ICD-10): \n\nD66: Hereditaire factor VIII-defici\u00ebntie    \n  D67: Hereditaire factor IX-defici\u00ebntie    \n  D68.0-D68.2, D68.4, D68.9: Overige stollingsstoornissen"
+            }
+        ]
+    },
+    {
+        "section_name": "Comorbiditeiten 2",
+        "section_items": [
+            {
+                "Categorie": "Neurologisch",
+                "LabelOmschrijving": "Cerebrovasculaire aandoening (o.a. CVA/TIA)",
+                "VariabeleNaam": "comcva",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Cerebrovasculaire aandoening (ICD-10):\n\nG45.x: 'Transient (cerebral) ischaemic attacks' [TIA] en verwante syndromen    \n  G46.x: Vasculaire syndromen van hersenen bij cerebrovasculaire ziekten    \n  H34.0: Voorbijgaande afsluiting van retinale arteri\u00ebn    \n  I60.x-I69.x: Cerebrovasculaire ziekten"
+            },
+            {
+                "Categorie": "Neurologisch",
+                "LabelOmschrijving": "Para-/hemiplegie",
+                "VariabeleNaam": "comparalys",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Para-/hemiplegie (ICD-10):\n\nG04.1: Tropische spastische-paraplegie    \n  G11.4: Hereditaire spastische-paraplegie    \n  G80.1-G80.2: Diplegische/Hemiplegische 'cerebral palsy', spastisch    \n  G81.x: Hemiplegie    \n  G82.x: Paraplegie en tetraplegie    \n  G83.0-G83.4, G83.9: Overige paralytische syndromen\""
+            },
+            {
+                "Categorie": "Neurologisch",
+                "LabelOmschrijving": "Dementie",
+                "VariabeleNaam": "comdem",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Dementie (ICD-10):\n\nF00.x-F03.x: Dementie nader gespecificeerd    \n  F05.1: Delirium, gesuperponeerd op dementie    \n  G30.x: Ziekte van Alzheimer    \n  G31.1: Seniele hersendegeneratie, niet elders geclassificeerd"
+            },
+            {
+                "Categorie": "Maag-Darm",
+                "LabelOmschrijving": "Gastrointestinaal ulcuslijden",
+                "VariabeleNaam": "comgiulcus",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Gastrointestinaal ulcuslijden (ICD-10):\n\nK25.x: Ulcus ventriculi    \n  K26.x: Ulcus duodeni    \n  K27.x: Ulcus pepticum, lokalisatie niet-gespecificeerd    \n  K28.x: Ulcus gastrojejunale"
+            },
+            {
+                "Categorie": "Urogenitaal",
+                "LabelOmschrijving": "Nierziekte",
+                "VariabeleNaam": "comnier",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Nierziekten (ICD-10):\n\nI12.0: Hypertensieve nierziekte met nierinsuffici\u00ebntie    \n  I13.1: Hypertensieve hart- \u00e9n nierziekte met nierinsuffici\u00ebntie    \n  N03.2-N03.7: Chronisch nefritisch syndroom    \n  N05.2-N05.7: Niet-gespecificeerd nefritisch syndroom    \n  N18.x: Chronische nierziekte    \n  N19.x: Niet-gespecificeerde nierinsuffici\u00ebntie    \n  N25.0: Renale osteodystrofie    \n  Z49.x: Zorg bij dialyse    \n  Z94.0: Aanwezigheid van niertransplantaat    \n  Z99.2: Afhankelijkheid van hemodialyse"
+            },
+            {
+                "Categorie": "Spieren en gewrichten",
+                "LabelOmschrijving": "Bindweefselziekte (o.a. reumato\u00efde ziekten)",
+                "VariabeleNaam": "combind",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Bindweefselziekte (ICD-10):\n\nM05.x: Seropositieve reumato\u00efde-artritis    \n  M06.x: Overige reumato\u00efde-artritis    \n  M31.5: Reuscelarteriitis met 'polymyalgia rheumatica'    \n  M32.x-M34.x: Systeemziekten van bindweefsel    \n  M35.1: Overige overgangssyndromen    \n  M35.3: Polymyalgia rheumatica    \n  M36.0: Systeemziekten van bindweefsel bij elders geclassificeerde ziekten"
+            },
+            {
+                "Categorie": "Infectieziekten",
+                "LabelOmschrijving": "HIV/AIDS",
+                "VariabeleNaam": "comhiv",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Human immunodeficiency virus (HIV) (ICD-10):\n\nB20.x: Ziekte door humaan immunodefici\u00ebntievirus [HIV] leidend tot infectieziekten en parasitaire aandoeningen    \n  B21.x: Ziekte door humaan immunodefici\u00ebntievirus [HIV] leidend tot maligne neoplasmata    \n  B22.x: Ziekte door humaan immunodefici\u00ebntievirus [HIV] leidend tot overige gespecificeerde ziekten    \n  B24.x: Niet-gespecificeerd ziekte door humaan immunodefici\u00ebntievirus [HIV]"
+            },
+            {
+                "Categorie": "Infectieziekten",
+                "LabelOmschrijving": "Tuberculose",
+                "VariabeleNaam": "comtbc",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Tuberculose (ICD-10):\n\nA15.x-A19.x: Tuberculose    \n  B90.x: Late gevolgen van tuberculose    \n  J65: Pneumoconiose samengaand met tuberculose    \n  M49.0*: Tuberculose van wervelkolom (A18.0+)    \n  M90.0*: Tuberculose van bot (A18.0+)    \n  O98.0: Tuberculose als complicatie van zwangerschap, bevalling en kraambed    \n  P37.0: Congenitale tuberculose"
+            },
+            {
+                "Categorie": "Let op: onderstaande comorbiditeiten dient u handmatig in te vullen",
+                "LabelOmschrijving": "Diabetes mellitus",
+                "VariabeleNaam": "comdiam",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Gebruik, indien gewenst, externe ziektecategorie (hoofdstuk E10-E14) om specifiek diabetische ziektetype te identificeren. De hieropvolgend aangegeven onderverdelingen van subcategori\u00ebn zijn bedoeld voor gebruik met de categorie\u00ebn E10-E14:\n\nE10.x: Type-1-diabetes    \n  E11.x: Type-2-diabetes    \n  E12.x: Diabetes mellitus verband houdend met ondervoeding    \n  E13.x: Overige gespecificeerde vormen van diabetes mellitus    \n  E14.x: Niet-gespecificeerde diabetes mellitus\n\nZonder chronische complicaties (ICD-10):\n\nXX.0: Diabetische coma met of zonder ketoacidose    \n  XX.1: Diabetische ketoacidose    \n  XX.6: Diabetes met anders gespecificeerde complicaties    \n  XX.8: Diabetes met ongespecificeerde complicaties    \n  XX.9: Diabetes zonder complicaties\n\nMet chronische complicaties (ICD-10):\n\nXX.2: Diabetes met renale complicaties    \n  XX.3: Diabetes met oogheelkundige complicaties    \n  XX.4: Diabetes met neurologische complicaties    \n  XX.5: Diabetes met perifeer vasculaire complicaites    \n  XX.7: Diabetes met multipele complicaties"
+            },
+            {
+                "Categorie": "Let op: onderstaande comorbiditeiten dient u handmatig in te vullen",
+                "LabelOmschrijving": "Leverziekte",
+                "VariabeleNaam": "comlever",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Milde leverziekte (ICD-10):\n\nB18.x: Chronische virushepatitis    \n  K70.0-K70.3, K70.9: Alcoholische leverziekten    \n  K71.3-K71.5, K71.7: Toxische leverziekte (mild)    \n  K73.x: Chronische hepatitis, niet elders geclassificeerd    \n  K74.x: Leverfibrose en levercirrose    \n  K76.0: Vettige leverdegeneratie, niet elders geclassificeerd    \n  K76.2: Centrale hemorragische-levernecrose    \n  K76.3: Leverinfarct    \n  K76.4: Peliosis hepatis    \n  K76.8: Overige gespecificeerde leverziekten    \n  K76.9: Leverziekte, niet-gespecificeerd    \n  Z94.4: Aanwezigheid van levertransplantaat\n\nErnstige leverziekte (ICD-10):\n\nI85.x: Slokdarmvarices    \n  I86.4: Varices van maag    \n  I98.2: Slokdarmvarices zonder bloeding bij elders geclassificeerde ziekten    \n  K70.4: Alcoholische leverinsuffici\u00ebntie    \n  K72.x: Leverinsuffici\u00ebntie, niet elders geclassificeerd    \n  K76.7: Hepatorenaal syndroom"
+            },
+            {
+                "Categorie": "Let op: onderstaande comorbiditeiten dient u handmatig in te vullen",
+                "LabelOmschrijving": "Maligniteit (excl. PCC of BCC van de huid)",
+                "VariabeleNaam": "commalig",
+                "Type": "geheel getal",
+                "Lengte": 1.0,
+                "Formaat": "",
+                "VariabeleVerplicht": "",
+                "OptieKeuzeVerplicht": "Ja",
+                "HelpTekst": "Het gaat hier om iedere maligniteit die in de afgelopen 5 jaar is gediagnosticeerd ten opzichte van de huidige datum van registreren (datum huidige verrichting) of waar de pati\u00ebnt nu nog voor behandeld wordt (uitgezonderd basaalcel carcinoom of plaveiselcel carcinoom van de huid). \nNB het gaat hier om comorbiditeiten, dus niet om de maligniteit waarvoor de pati\u00ebnt nu wordt geregistreerd. \n\nNiet gemetastaseerd (ICD-10):\n\nC00.x-C14.x: Maligne neoplasmata van lip, mond- en keelholte    \nC15.x-C26.x: Maligne neoplasmata van spijsverteringsstelsel    \nC30.x-C39.x: Maligne neoplasmata van ademhalingsstelsel en intrathoracale organen    \nC40.x-C41.x: Maligne neoplasmata van bot en gewrichtskraakbeen    \nC43.x: Maligne melanoom van huid    \nC45.x-C49.x: Maligne neoplasmata van mesotheel en weke delen    \nC50.x: Maligne neoplasmata van mamma    \nC51.x-C58.x: Maligne neoplasmata van vrouwelijke geslachtsorganen    \nC60.x-C63.x: Maligne neoplasmata van mannelijke geslachtsorganen    \nC64.x-C68.x: Maligne neoplasmata van nier en urinewegen    \nC69.x-C72.x: Maligne neoplasmata van oog, hersenen en overige delen van centraal zenuwstelsel    \nC73.x-C75.x: Maligne neoplasmata van schildklier en andere endocriene-klieren    \nC76.x: Maligne neoplasma van overige en slecht omschreven lokalisaties    \nC81.x-C96.x: Maligne neoplasmata van lymfo\u00efd, hematopo\u00ebtisch en verwant weefsel    \nC97.x: Maligne neoplasmata van onafhankelijke (primaire) multipele lokalisaties    \n\nGemetastaseerd (ICD-10):\n\nC77.x: Secundaire en niet-gespecificeerde maligne neoplasmata van lymfeklieren    \nC78.x: Secundair maligne neoplasma van tractus respiratorius en tractus digestivus    \nC79.x: Secundair maligne neoplasma van overige en niet-gespecificeerde lokalisaties    \nC80.x: maligne neoplasma zonder gespecificeerde lokalisatie\n\nLet op: geen plaveiselcelcarcinoom (PCC) en basaalcelcarcinoom (BCC)."
+            }
+        ]
+    }
+]
