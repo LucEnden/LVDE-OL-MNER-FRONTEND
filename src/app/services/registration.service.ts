@@ -8,6 +8,7 @@ import * as Registrations from '../stubs/registrations.json';
 })
 export class RegistrationService {
     private _localStorageKey = 'selectedRegistration';
+    private _supportedRegistrations: Registration[] = this._getSupportedRegistrations();
 
     @Output() registrationSelected = new EventEmitter<Registration>();
 
@@ -34,7 +35,11 @@ export class RegistrationService {
         }
     }
 
-    getSupportedRegistrations() {
+    get supportedRegistrations(): Registration[] {
+        return this._supportedRegistrations;
+    }
+
+    private _getSupportedRegistrations() {
         const supportedRegistrations: Registration[] = [];
 
         //console.log(Object.keys(Registrations)) // Array(5) [ "0", "1", "2", "length", "default" ]

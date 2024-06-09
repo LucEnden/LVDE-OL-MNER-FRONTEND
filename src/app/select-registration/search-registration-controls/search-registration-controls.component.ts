@@ -16,7 +16,7 @@ export class SearchRegistrationControlsComponent {
     ) { }
 
     get supportedRegistrationNames(): string[] {
-        return this.registrationService.getSupportedRegistrations().map(reg => reg.name);
+        return this.registrationService.supportedRegistrations.map(reg => reg.name);
     }
 
     get registrationSearchText(): string {
@@ -42,7 +42,7 @@ export class SearchRegistrationControlsComponent {
     onRegistrationSelect(registrationName: string): void {
         console.log('Registration selected:', registrationName);
         
-        this.registrationService.selectedRegistration = this.registrationService.getSupportedRegistrations().find(reg => reg.name === registrationName)!;
+        this.registrationService.selectedRegistration = this.registrationService.supportedRegistrations.find(reg => reg.name === registrationName)!;
     }
 
     onConfirmRegistrationSelection(): void {
