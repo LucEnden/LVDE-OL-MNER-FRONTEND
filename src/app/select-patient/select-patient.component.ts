@@ -1,6 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { PatientService } from '../services/patient.service';
-import { PatientInfo } from '../models/patient-info';
+import { PatientDetails } from '../models/patient-details';
 
 @Component({
     selector: 'app-select-patient',
@@ -8,7 +8,7 @@ import { PatientInfo } from '../models/patient-info';
     styleUrls: ['./select-patient.component.scss']
 })
 export class SelectPatientComponent implements AfterViewInit {
-    private _patientsInfo: PatientInfo[] = [];
+    private _patientsInfo: PatientDetails[] = [];
 
     private _mdnFilter: string = '';
     private _firstNameFilter: string = '';
@@ -22,12 +22,12 @@ export class SelectPatientComponent implements AfterViewInit {
     ngAfterViewInit(): void {
         this._patientsInfo = [];
 
-        this.patientService.getPatientsInfo().then((patientsInfoResponse: PatientInfo[]) => {
+        this.patientService.getPatientsInfo().then((patientsInfoResponse: PatientDetails[]) => {
             this._patientsInfo.push(...patientsInfoResponse);
         });
     }
 
-    get filteredPatientsInfo(): PatientInfo[] {
+    get filteredPatientsInfo(): PatientDetails[] {
         const defaultFil = (patInfoValue: string, filterValue: string) => {
             if (filterValue == null || filterValue == undefined || filterValue == '') {
                 return true;
@@ -37,7 +37,7 @@ export class SelectPatientComponent implements AfterViewInit {
         };
 
 
-        return this._patientsInfo.filter((patientInfo: PatientInfo) => {
+        return this._patientsInfo.filter((patientInfo: PatientDetails) => {
             return (
                 defaultFil(patientInfo.mdn.toString(), this._mdnFilter) && 
                 defaultFil(patientInfo.firstName, this._firstNameFilter) && 
@@ -72,7 +72,7 @@ export class SelectPatientComponent implements AfterViewInit {
         }
     }
 
-    onPatientSelect(patientInfo: PatientInfo): void {
+    onPatientSelect(patientInfo: PatientDetails): void {
         this.patientService.selectedPatient = patientInfo;
     }
 }

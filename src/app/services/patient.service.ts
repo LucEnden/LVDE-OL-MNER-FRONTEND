@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
-import { PatientInfo } from '../models/patient-info';
+import { PatientDetails } from '../models/patient-details';
 
 import * as Patients from '../stubs/patients.json';
 
@@ -9,21 +9,21 @@ import * as Patients from '../stubs/patients.json';
 export class PatientService {
     private _localStorageKey = 'selectedPatient';
 
-    @Output() patientSelected = new EventEmitter<PatientInfo>();
+    @Output() patientSelected = new EventEmitter<PatientDetails>();
 
     constructor() { }
 
-    get selectedPatient(): PatientInfo | null {
+    get selectedPatient(): PatientDetails | null {
         const storedPatient = localStorage.getItem(this._localStorageKey);
 
         if (storedPatient !== null) {
-            return JSON.parse(storedPatient) as PatientInfo;
+            return JSON.parse(storedPatient) as PatientDetails;
         } else {
             return null;
         }
     }
-    
-    set selectedPatient(value: PatientInfo | null) {
+
+    set selectedPatient(value: PatientDetails | null) {
         if (value !== null) {
             // Store the selected registration in local storage
             // IMPORTANT: This is not secure, once the backend is implemented, this should be stored in the user's session
@@ -35,14 +35,34 @@ export class PatientService {
         }
     }
 
-    async getPatientsInfo(): Promise<PatientInfo[]> {
-        const patientsInfo: PatientInfo[] = [];
+    async getPatientsInfo(): Promise<PatientDetails[]> {
+        const patientsInfo: PatientDetails[] = [];
 
         const nStubObjects = Object.keys(Patients).length - 2;
         for (let i = 0; i < nStubObjects; i++) {
-            patientsInfo.push(Patients[i] as PatientInfo);
+            patientsInfo.push(Patients[i] as PatientDetails);
         }
 
         return patientsInfo;
+    }
+
+    async getPatientHistory(patientMdn: string): Promise<string[]> {
+        // Mocking the patient history
+        const nLorums = Math.floor(Math.random() * 4) + 1;
+        const patientHistory: string[] = [];
+
+        for (let i = 0; i < nLorums; i++) {
+            patientHistory.push(this._lorumIpsumGenerator());
+        }
+
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(patientHistory);
+            }, 500);
+        });
+    }
+
+    private _lorumIpsumGenerator(): string {
+        return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, purus nec sollicitudin ultricies, tortor urna varius ex, nec vehicula nunc risus at libero. Etiam nec dolor auctor, auctor lectus ac, aliquet nunc. Nullam auctor, purus nec sollicitudin ultricies, tortor urna varius ex, nec vehicula nunc risus at libero. Etiam nec dolor auctor, auctor lectus ac, aliquet nunc.';
     }
 }

@@ -1,0 +1,13 @@
+<div class="rounded-lg border-2 border-black">
+  <h1
+    class="w-full border-b-2 border-black clr-tertiary pl-4 text-2xl font-semibold"
+  >
+    Patient History
+  </h1>
+  <div class="">
+    <app-annotated-text
+      *ngFor="let annotatedText of annotatedPatientHistory"
+      [annotatedText]="annotatedText"
+    />
+  </div>
+</div>

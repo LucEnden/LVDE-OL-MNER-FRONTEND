@@ -1,13 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { PatientInfo } from 'src/app/models/patient-info';
+import { PatientDetails } from 'src/app/models/patient-details';
 
 @Component({
   selector: 'app-patient-info-container',
   templateUrl: './patient-info-container.component.html',
   styleUrls: ['./patient-info-container.component.scss']
 })
-export class PatientInfoContainerComponent {
-    @Input({ required: true }) patientsInfo: PatientInfo[] = [];
+export class PatientDetailsContainerComponent {
+    @Input({ required: true }) patientsInfo: PatientDetails[] = [];
 
-    @Output() onPatientSelect: EventEmitter<PatientInfo> = new EventEmitter<PatientInfo>();
+    @Output() onPatientSelect: EventEmitter<PatientDetails> = new EventEmitter<PatientDetails>();
 }

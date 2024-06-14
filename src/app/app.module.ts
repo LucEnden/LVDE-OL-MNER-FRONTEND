@@ -11,8 +11,15 @@ import { StartRegistrationFormComponent } from './start-registration-form/start-
 import { StepContainerComponent } from './step-container/step-container.component';
 import { SelectPatientComponent } from './select-patient/select-patient.component';
 import { SearchPatientControlsComponent } from './select-patient/search-patient-controls/search-patient-controls.component';
-import { PatientInfoContainerComponent } from './select-patient/patient-info-container/patient-info-container.component';
+import { PatientDetailsContainerComponent } from './select-patient/patient-info-container/patient-info-container.component';
 import { VerifyRegistrationComponent } from './verify-registration/verify-registration.component';
+import { ComorbiditiesChecklistComponent } from './verify-registration/comorbidities-checklist/comorbidities-checklist.component';
+import { PatientHistoryContainerComponent } from './verify-registration/patient-history-container/patient-history-container.component';
+import { AnnotationLegendComponent } from './verify-registration/annotation-legend/annotation-legend.component';
+import { SelectedAnnotationsDetailsComponent } from './verify-registration/selected-annotations-details/selected-annotations-details.component';
+import { VerifyRegistrationActionsComponent } from './verify-registration/verify-registration-actions/verify-registration-actions.component';
+import { AnnotationComponent } from './verify-registration/patient-history-container/annotation/annotation.component';
+import { AnnotatedTextComponent } from './verify-registration/patient-history-container/annotated-text/annotated-text.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +31,15 @@ import { VerifyRegistrationComponent } from './verify-registration/verify-regist
     StepContainerComponent,
     SelectPatientComponent,
     SearchPatientControlsComponent,
-    PatientInfoContainerComponent,
-    VerifyRegistrationComponent
+    PatientDetailsContainerComponent,
+    VerifyRegistrationComponent,
+    ComorbiditiesChecklistComponent,
+    PatientHistoryContainerComponent,
+    AnnotationLegendComponent,
+    SelectedAnnotationsDetailsComponent,
+    VerifyRegistrationActionsComponent,
+    AnnotationComponent,
+    AnnotatedTextComponent
   ],
   imports: [
     BrowserModule,

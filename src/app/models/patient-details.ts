@@ -1,4 +1,4 @@
-export class PatientInfo {
+export class PatientDetails {
     constructor(
         public mdn: number,
         public firstName: string,
