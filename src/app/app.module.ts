@@ -16,7 +16,7 @@ import { VerifyRegistrationComponent } from './verify-registration/verify-regist
 import { ComorbiditiesChecklistComponent } from './verify-registration/comorbidities-checklist/comorbidities-checklist.component';
 import { PatientHistoryContainerComponent } from './verify-registration/patient-history-container/patient-history-container.component';
 import { AnnotationLegendComponent } from './verify-registration/annotation-legend/annotation-legend.component';
-import { SelectedAnnotationsDetailsComponent } from './verify-registration/selected-annotations-details/selected-annotations-details.component';
+import { SelectedAnnotationDetailsComponent } from './verify-registration/selected-annotation-details/selected-annotation-details.component';
 import { VerifyRegistrationActionsComponent } from './verify-registration/verify-registration-actions/verify-registration-actions.component';
 import { AnnotationComponent } from './verify-registration/patient-history-container/annotation/annotation.component';
 import { AnnotatedTextComponent } from './verify-registration/patient-history-container/annotated-text/annotated-text.component';
@@ -36,7 +36,7 @@ import { AnnotatedTextComponent } from './verify-registration/patient-history-co
     ComorbiditiesChecklistComponent,
     PatientHistoryContainerComponent,
     AnnotationLegendComponent,
-    SelectedAnnotationsDetailsComponent,
+    SelectedAnnotationDetailsComponent,
     VerifyRegistrationActionsComponent,
     AnnotationComponent,
     AnnotatedTextComponent

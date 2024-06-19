@@ -63,6 +63,7 @@ export class PatientService {
     }
 
     private _lorumIpsumGenerator(): string {
-        return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, purus nec sollicitudin ultricies, tortor urna varius ex, nec vehicula nunc risus at libero. Etiam nec dolor auctor, auctor lectus ac, aliquet nunc. Nullam auctor, purus nec sollicitudin ultricies, tortor urna varius ex, nec vehicula nunc risus at libero. Etiam nec dolor auctor, auctor lectus ac, aliquet nunc.';
+        return 'A test string for demo purposes.'
+        // return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, purus nec sollicitudin ultricies, tortor urna varius ex, nec vehicula nunc risus at libero. Etiam nec dolor auctor, auctor lectus ac, aliquet nunc. Nullam auctor, purus nec sollicitudin ultricies, tortor urna varius ex, nec vehicula nunc risus at libero. Etiam nec dolor auctor, auctor lectus ac, aliquet nunc.';
     }
 }
