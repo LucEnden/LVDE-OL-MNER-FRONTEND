@@ -48,7 +48,7 @@ export class PatientService {
 
     async getPatientHistory(patientMdn: string): Promise<string[]> {
         // Mocking the patient history
-        const nLorums = Math.floor(Math.random() * 4) + 1;
+        const nLorums = 2;
         const patientHistory: string[] = [];
 
         for (let i = 0; i < nLorums; i++) {

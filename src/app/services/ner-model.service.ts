@@ -17,12 +17,11 @@ export class NerModelService {
         const words = text.split(' ');
         let start = 0;
         let end = 0;
+        let shouldAnnotate = true;
 
         for (let i = 0; i < words.length; i++) {
             const label = labels[Math.floor(Math.random() * labels.length)];
             const word = words[i];
-
-            const shouldAnnotate = Math.random() <= 0.1; // 10% chance of annotating a word
 
             if (shouldAnnotate) {
                 start = text.indexOf(word, end);    // Find the start index of the word
@@ -35,6 +34,9 @@ export class NerModelService {
                     label,
                     Math.random()
                 ));
+                shouldAnnotate = false;
+            } else {
+                shouldAnnotate = true;
             }
         }
 

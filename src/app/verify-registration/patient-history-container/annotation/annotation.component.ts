@@ -9,6 +9,7 @@ export class AnnotationComponent {
     @Input({ required: true }) text: string = '';
     @Input({ required: true }) backgroundColor: string = '';
     @Input({ required: true }) textColor: string = '';
+    @Input({ required: true }) label: string = '';
 
     constructor() { }
 }

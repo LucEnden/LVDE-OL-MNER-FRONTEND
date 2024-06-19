@@ -1,6 +1,5 @@
-import { Component, ElementRef, Input, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { AnnotatedText } from 'src/app/models/annotated-text';
-import { AnnotationComponent } from '../annotation/annotation.component';
 
 @Component({
     selector: 'app-annotated-text',
@@ -9,68 +8,52 @@ import { AnnotationComponent } from '../annotation/annotation.component';
 })
 export class AnnotatedTextComponent {
     @Input({ required: true }) annotatedText: AnnotatedText | null = null;
+    @ViewChild('annotatedTextElem') annotatedTextElement: ElementRef<HTMLDivElement> | undefined;
 
-    // @ViewChild('annotatedTextTemplate', { read: ViewContainerRef }) annotatedTextTemplate: ViewContainerRef | undefined;
-    // @ViewChild('annotatedTextSpan', { read: ElementRef<HTMLSpanElement> }) annotatedTextSpan: ElementRef<HTMLSpanElement> | undefined;
-    @ViewChild('annotatedTextContainer', { read: ViewContainerRef }) annotatedTextContainer: ViewContainerRef | undefined;
-
-    constructor() { }
-
-    ngAfterViewInit() {
-        this.constructPatientHistoryForRendering();
-    }
-
-    private async constructPatientHistoryForRendering() {
-        if (this.annotatedText === null) {
-            console.error('Annotated text is null');
+    async ngAfterViewInit() {
+        if (!this.annotatedText || !this.annotatedTextElement) {
             return;
         }
-        if (this.annotatedTextContainer === undefined) {
-            console.error('Annotated text container is undefined');
-            return;
-        }
-
-        // // We start by injecting an element where all the text will reside in
-        // // Clear the element and inject a span element with all the text
-        // this.annotatedTextSpan.nativeElement.innerHTML = this.annotatedText.text;
-
-        // Render the unannotated text
-        let start: number = 0;
-        let end: number = 0;
+        
+        const colorDict = this._getColorDict(this.annotatedText.annotations);
+        
+        // Render the text
+        this.annotatedTextElement.nativeElement.innerHTML = this.annotatedText.text;
 
         // Render the annotations
-        const clrDict = this._getColorDict(this.annotatedText.annotations);
-        
-        this.annotatedTextContainer.clear();
-        this.annotatedText.annotations.forEach((annotation, index) => {
-            // Render the text before the annotation as a plain span element
-            const textBeforeAnnotation = this.annotatedText!.text.slice(start, annotation.start);
-            if (textBeforeAnnotation.length > 0) {
-                const textBeforeAnnotationElement = document.createElement('span');
-                textBeforeAnnotationElement.innerText = textBeforeAnnotation;
-                this.annotatedTextContainer!.element.nativeElement.appendChild(textBeforeAnnotationElement);
+        this.annotatedText.annotations.map(annotation => {
+            const clr = colorDict[annotation.label];
+            const start = annotation.start;
+            const end = annotation.end;
+
+            const span = document.createElement('span');
+            span.style.backgroundColor = clr;
+            span.style.color = 'white';
+            span.style.padding = '2px';
+            span.style.borderRadius = '5px';
+            span.style.cursor = 'pointer';
+            span.title = annotation.label;
+            span.innerHTML = this.annotatedText!.text.slice(start, end);
+            span.onclick = () => {
+                console.log(annotation.label);
+            };
+            span.onmouseover = () => {
+                span.style.backgroundColor = 'black';
+            }
+            span.onmouseout = () => {
+                span.style.backgroundColor = clr;
             }
 
-            // Create an annotation component
-            const annotationComponent = this.annotatedTextContainer!.createComponent(AnnotationComponent);
-            annotationComponent.instance.text = annotation.text;
-            annotationComponent.instance.backgroundColor = clrDict[annotation.label];
-            annotationComponent.instance.textColor = 'black';
+            // Replace the text with the span
+            const spanBefore = document.createElement('span');
+            spanBefore.textContent = this.annotatedText!.text.slice(0, start);
+            const spanAfter = document.createElement('span');
+            spanAfter.textContent = this.annotatedText!.text.slice(end);
 
-            // Render the annotation component
-            this.annotatedTextContainer!.insert(annotationComponent.hostView);
-
-            // If this is the last annotation, render the text after the last annotation
-            // if (index === this.annotatedText!.annotations.length - 1) {
-            //     const textAfterAnnotation = this.annotatedText!.text.slice(annotation.end);
-            //     if (textAfterAnnotation.length > 0) {
-            //         const textAfterAnnotationElement = document.createElement('span');
-            //         textAfterAnnotationElement.innerText = textAfterAnnotation;
-            //         this.annotatedTextContainer!.element.nativeElement.appendChild(textAfterAnnotationElement);
-            //     }
-            // }
-
-            // start = annotation.end;
+            this.annotatedTextElement!.nativeElement.innerHTML = '';
+            this.annotatedTextElement!.nativeElement.appendChild(spanBefore);
+            this.annotatedTextElement!.nativeElement.appendChild(span);
+            this.annotatedTextElement!.nativeElement.appendChild(spanAfter);
         });
     }
 
