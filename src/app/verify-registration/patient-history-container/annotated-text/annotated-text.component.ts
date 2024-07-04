@@ -14,9 +14,11 @@ export class AnnotatedTextComponent {
         if (!this.annotatedText || !this.annotatedTextElement) {
             return;
         }
-        
+
+
+
         const colorDict = this._getColorDict(this.annotatedText.annotations);
-        
+
         // Render the text
         this.annotatedTextElement.nativeElement.innerHTML = this.annotatedText.text;
 
@@ -27,21 +29,49 @@ export class AnnotatedTextComponent {
             const end = annotation.end;
 
             const span = document.createElement('span');
+
+            // Add context menu for updating the annotation label to the span
+            const changeAnnotationContextMenu = document.createElement('div');
+            changeAnnotationContextMenu.innerHTML = 'Test context menu';
+            changeAnnotationContextMenu.classList.add(
+                'absolute',
+                'w-48',
+                'bg-white',
+                'border-2',
+                'text-black',
+                'shadow-md',
+                'rounded-lg',
+                'hidden',
+                'z-10',
+                'left-0',
+                'origin-bottom-right',
+            );
+
             span.style.backgroundColor = clr;
-            span.style.color = 'white';
-            span.style.padding = '2px';
-            span.style.borderRadius = '5px';
-            span.style.cursor = 'pointer';
+            span.classList.add(
+                'relative',
+                'text-white',
+                'px-1',
+                'rounded-lg',
+                'cursor-pointer',
+                'transition-all',
+                'duration-200',
+                'hover:px-2'
+            );
             span.title = annotation.label;
-            span.innerHTML = this.annotatedText!.text.slice(start, end);
-            span.onclick = () => {
+            span.textContent = this.annotatedText!.text.slice(start, end);
+
+            span.onclick = (e) => {
                 console.log(annotation.label);
+                changeAnnotationContextMenu.classList.toggle('hidden');
+                console.log(changeAnnotationContextMenu);
             };
+
             span.onmouseover = () => {
-                span.style.backgroundColor = 'black';
+
             }
             span.onmouseout = () => {
-                span.style.backgroundColor = clr;
+
             }
 
             // Replace the text with the span
@@ -54,6 +84,9 @@ export class AnnotatedTextComponent {
             this.annotatedTextElement!.nativeElement.appendChild(spanBefore);
             this.annotatedTextElement!.nativeElement.appendChild(span);
             this.annotatedTextElement!.nativeElement.appendChild(spanAfter);
+
+            // We need to append the context menu to the span after it is appended to the DOM
+            span.appendChild(changeAnnotationContextMenu);
         });
     }
 
