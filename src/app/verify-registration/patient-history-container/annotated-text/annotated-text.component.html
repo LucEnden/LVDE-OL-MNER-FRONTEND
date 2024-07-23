@@ -1,2 +1,8 @@
-<div #annotatedTextElem class="annotated-text">
+<div *ngIf="annotatedText !== null" >
+    <span *ngFor="let annotation of annotatedText.annotations; index as i">
+        <span *ngIf="i !== 0">{{
+            annotatedText.text.substring(annotatedText.annotations[i - 1].end, annotation.start)
+        }}</span>
+        <app-annotation [text]="annotation.text" [backgroundColor]="nerModelService.colorDict[annotation.label]" [textColor]="'white'" [label]="annotation.label" />
+    </span>
 </div>
