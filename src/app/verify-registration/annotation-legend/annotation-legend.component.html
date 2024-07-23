@@ -1,1 +1,12 @@
 <p>annotation-legend works!</p>
+<div class="rounded-lg border-2 border-black">
+    <h2 class="w-full border-b-2 border-black clr-tertiary pl-4 text-2xl font-semibold">
+        Legenda
+    </h2>
+    <div class="flex gap-2 p-4 flex-col">
+        <p *ngFor="let label of nerModelService.labels" class="font-semibold rounded-full pl-2" [style]="{
+            'background-color': nerModelService.colorDict[label],
+            'color': 'white',
+        }">{{label}}</p>
+    </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NerModelService } from 'src/app/services/ner-model.service';
 
 @Component({
   selector: 'app-annotation-legend',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./annotation-legend.component.scss']
 })
 export class AnnotationLegendComponent {
+    constructor(
+        public nerModelService: NerModelService
+    ) {
 
+    }
 }
