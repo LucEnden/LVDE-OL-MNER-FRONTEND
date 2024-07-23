@@ -1,7 +1,7 @@
 [
     {
-        "section_name": "Comorbiditeiten 1",
-        "section_items": [
+        "SectionName": "Comorbiditeiten 1",
+        "SectionItems": [
             {
                 "Categorie": "Algemeen",
                 "LabelOmschrijving": "Datum comorbiditeiten\n\nDit betreft de datum waarop de bepaling van deze comorbiditeiten is vastgesteld. Deze datum is vaak gelijk aan 'consult datum' of \u2018operatiedatum\u2019.\n\nN.B. Indien de comorbiditeitstatus van de pati\u00ebnt is gewijzigd sinds uw vorige invoer, maakt u een nieuw record voor deze pati\u00ebnt aan.",
@@ -269,8 +269,8 @@
         ]
     },
     {
-        "section_name": "Comorbiditeiten 2",
-        "section_items": [
+        "SectionName": "Comorbiditeiten 2",
+        "SectionItems": [
             {
                 "Categorie": "Neurologisch",
                 "LabelOmschrijving": "Cerebrovasculaire aandoening (o.a. CVA/TIA)",

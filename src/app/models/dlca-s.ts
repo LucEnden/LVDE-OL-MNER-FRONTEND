@@ -1,13 +1,29 @@
+import * as DLCA_S_JSON from '../stubs/dlca-s.json';
+
+interface SectionItem {
+    Categorie: string;
+    LabelOmschrijving: string;
+    VariabeleNaam: string;
+    Type: string;
+    Lengte: string;
+    Formaat: string;
+    VariabeleVerplicht: string;
+    OptieKeuzeVerplicht: string;
+    HelpTekst: string;
+}
+
+interface Sections {
+    SectionName: string;
+    SectionItems: SectionItem[];
+}
+
 export class DLCA_S {
     constructor(
-        public Categorie: string,
-        public LabelOmschrijving: string,
-        public VariabeleNaam: string,
-        public Type: string,
-        public Lengte: string,
-        public Formaat: string,
-        public VariabeleVerplicht: string,
-        public OptieKeuzeVerplicht: string,
-        public HelpTekst: string
-    ) { }
+        public Sections: Sections[]
+    ) {
+        if (!Sections || Sections.length === 0) {
+            this.Sections = [];
+            console.log(DLCA_S_JSON);
+        }
+    }
 }
