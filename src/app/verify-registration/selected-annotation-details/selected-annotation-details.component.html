@@ -1,1 +1,19 @@
-<p>selected-annotations-details works!</p>
+<div class="rounded-lg border-2 border-black">
+    <h2 class="w-full border-b-2 border-black clr-tertiary pl-4 text-2xl font-semibold">
+        Details
+    </h2>
+    <div *ngIf="annotation !== null; else no_annotation_selected" class="flex gap-2 p-4 flex-col">
+        <div class="flex justify-between">
+            <span>Tekst:&nbsp;</span><span>{{ annotation.text }}</span>
+        </div>
+        <div class="flex justify-between">
+            <span>Label:&nbsp;</span><span>{{ annotation.label }}</span>
+        </div>
+        <div class="flex justify-between">
+            <span>Zekerheid:&nbsp;</span><span>{{ annotation.confidence }}%</span>
+        </div>
+    </div>
+    <ng-template #no_annotation_selected>
+        <p class="text-center">Geen annotatie geselecteerd</p>
+    </ng-template>
+</div>

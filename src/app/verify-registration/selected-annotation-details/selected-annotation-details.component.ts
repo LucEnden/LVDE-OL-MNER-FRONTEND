@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NerAnnotation } from 'src/app/models/ner-annotation';
 
 @Component({
   selector: 'app-selected-annotation-details',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./selected-annotation-details.component.scss']
 })
 export class SelectedAnnotationDetailsComponent {
-
+    @Input() annotation: NerAnnotation | null = null;
 }
