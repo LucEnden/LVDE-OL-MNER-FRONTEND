@@ -1,29 +1,10 @@
 import * as DLCA_S_JSON from '../stubs/dlca-s.json';
+import { BaseRegistration } from './base-registration';
 
-interface SectionItem {
-    Categorie: string;
-    LabelOmschrijving: string;
-    VariabeleNaam: string;
-    Type: string;
-    Lengte: string;
-    Formaat: string;
-    VariabeleVerplicht: string;
-    OptieKeuzeVerplicht: string;
-    HelpTekst: string;
-}
 
-interface Sections {
-    SectionName: string;
-    SectionItems: SectionItem[];
-}
-
-export class DLCA_S {
-    constructor(
-        public Sections: Sections[]
-    ) {
-        if (!Sections || Sections.length === 0) {
-            this.Sections = [];
-            console.log(DLCA_S_JSON);
-        }
+export class DLCA_S extends BaseRegistration {
+    constructor() {
+        super([]);
+        console.log('DLCA_S', DLCA_S_JSON);
     }
 }

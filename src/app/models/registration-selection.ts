@@ -1,4 +1,4 @@
-export class Registration {
+export class RegistrationSelection {
     constructor(
         public id: number,
         public name: string,

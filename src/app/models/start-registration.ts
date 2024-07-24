@@ -1,9 +1,9 @@
 import { PatientDetails } from "./patient-details";
-import { Registration } from "./registration";
+import { RegistrationSelection } from "./registration-selection";
 
 export class StartRegistration {
     constructor(
-        public registration: Registration | null,
+        public registration: RegistrationSelection | null,
         public patient: PatientDetails | null
     ) { }
 }

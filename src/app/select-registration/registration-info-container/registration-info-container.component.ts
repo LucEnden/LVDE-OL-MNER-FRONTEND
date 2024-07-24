@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Registration } from 'src/app/models/registration';
+import { RegistrationSelection } from 'src/app/models/registration-selection';
 
 @Component({
   selector: 'app-registration-info-container',
@@ -7,15 +7,15 @@ import { Registration } from 'src/app/models/registration';
   styleUrls: ['./registration-info-container.component.scss']
 })
 export class RegistrationInfoContainerComponent {
-    private _registration: Registration | null = null;
+    private _registration: RegistrationSelection | null = null;
 
     constructor() { }
 
-    get registration(): Registration | null {
+    get registration(): RegistrationSelection | null {
         return this._registration
     }
 
-    @Input() set registration(registration: Registration | null) {
+    @Input() set registration(registration: RegistrationSelection | null) {
         this._registration = registration;
     }
 }

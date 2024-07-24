@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Registration } from '../models/registration';
+import { RegistrationSelection } from '../models/registration-selection';
 import { RegistrationService } from '../services/registration.service';
 import { PatientService } from '../services/patient.service';
 import { PatientDetails } from '../models/patient-details';
@@ -15,7 +15,7 @@ export class SelectRegistrationComponent {
         public patientService: PatientService
     ) { }
 
-    get registration(): Registration | null {
+    get registration(): RegistrationSelection | null {
         return this.registrationService.selectedRegistration
     }
     get patient(): PatientDetails | null {

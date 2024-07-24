@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { StartRegistration } from '../models/start-registration';
 import { RegistrationService } from '../services/registration.service';
-import { Registration } from '../models/registration';
+import { RegistrationSelection } from '../models/registration-selection';
 import { PatientDetails } from '../models/patient-details';
 import { PatientService } from '../services/patient.service';
 
@@ -30,7 +30,7 @@ export class StartRegistrationFormComponent implements OnInit {
         this.model.patient = this.patientService.selectedPatient;
     }
 
-    get registration(): Registration | null {
+    get registration(): RegistrationSelection | null {
         return this.model.registration;
     }
 
