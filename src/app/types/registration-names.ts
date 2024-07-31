@@ -1,0 +1,1 @@
+export type RegistrationNames = 'DLCA-S' | 'DLCA-L' | 'DLCA-R'

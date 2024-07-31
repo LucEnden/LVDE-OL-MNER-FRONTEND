@@ -2,6 +2,7 @@ import { EventEmitter, Injectable, Output } from '@angular/core';
 import { RegistrationSelection } from '../models/registration-selection';
 
 import * as Registrations from '../stubs/registrations.json';
+import { RegistrationNames } from '../types/registration-names';
 
 @Injectable({
     providedIn: 'root'
@@ -51,7 +52,16 @@ export class RegistrationService {
         return supportedRegistrations;
     }
 
-    public getRegistrationByName(name: string): RegistrationSelection | null {
-        return this._supportedRegistrations.find(registration => registration.name === name) || null;
+    public getRegistrationByName(name: RegistrationNames): RegistrationSelection | undefined {
+        switch (name) {
+            case 'DLCA-S':
+                return this._supportedRegistrations.find(reg => reg.name === 'DLCA-S');
+            case 'DLCA-L':
+                return this._supportedRegistrations.find(reg => reg.name === 'DLCA-L');
+            case 'DLCA-R':
+                return this._supportedRegistrations.find(reg => reg.name === 'DLCA-R');
+            default:
+                return undefined;
+        }
     }
 }
